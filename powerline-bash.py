@@ -226,7 +226,7 @@ def add_git_segment(powerline, cwd):
 def add_svn_segment(powerline, cwd):
     is_svn = subprocess.Popen(['svn', 'status'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     is_svn_output = is_svn.communicate()[1].strip()
-    if len(is_svn_output) != 0:
+    if is_svn_output:
         return
 
     '''svn info:
